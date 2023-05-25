@@ -1,0 +1,168 @@
+
+
+.usuario {
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    margin-bottom: 5%;
+    padding-bottom: 20px;
+}
+.cont_banner_img {
+    width: 100%;
+}
+.cont_banner_img img     {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+
+}
+
+.cont_icon_img {
+    width: 15%;
+    margin: 0 auto;
+}
+
+.cont_icon_img img {
+    width: 100%;
+    margin-top: -40%;
+    
+}
+.inf_details {
+    margin: 3% auto;
+    padding-left: 40px;
+}
+.inf_details .inps{
+    display: flex;
+    align-items: center;
+}
+
+.inf_details .inps div {
+    margin: 5px auto;
+    width: 50%;
+}
+
+.inf_details .inps input {
+    width: 90%;
+    height: 3vh;
+    margin-left: 5px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    padding-left: 10px;
+}
+
+.line_final {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.line_final2 {
+    width: 30%;
+    margin: 15px auto;
+    margin-bottom: 20px;
+}
+
+.line_final3 {
+    width: 90%;
+    margin: 5px auto;
+    margin-bottom: 20px;
+}
+
+.social {
+    text-align: center;
+}
+.usuario h5 {
+    font-size: 20pt;
+    text-align: center;
+}
+
+.card_sociais {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sociais , .sociais div {
+    display: flex;
+    align-items: center;
+}
+
+.social i {
+    font-size: 20pt;
+    margin-right: 5px;
+
+}
+
+.social input {
+    border: 1px solid rgba(0, 0, 0, 0.373);
+    margin-left: 20px;
+    padding: 3px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.servicos {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont_servicos {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
+    padding: 25px;
+    background-color: #212124;
+    color: white;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.cont_servicos div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cont_servicos input {
+    width: 70%;
+    margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: white;
+    padding: 5px;
+
+}
+
+.cont_servicos input:focus {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    outline: 0;
+}
+
+.cont_servicos button {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 20px;
+}
+.cont_servicos textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.cont_servicos textarea:focus {
+    border: none;
+    outline: 0;
+}
+
+.cont_btn_adicionar_imagem {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.btn_adicionar_imagem {
+    padding: 5px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #212124;
+    color: white;
+}
+
+

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Planeja+</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../universal.css">
+    <link rel="stylesheet" href="css/slide.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="menu modal-menu">
+        <!-- <p><i onclick="teste()" class='bx bx-menu'></i></p> -->
+
+        <div>
+            <h1>PLANEJA+</h1>
+
+            <div class="cont_inf_user">
+
+
+                <div>
+                    <p>Área do Produtor</p>
+                </div>
+
+                <!-- <i class='bx bxs-user-circle'></i>
+
+                <div style="display:  flex; justify-content: center; align-items: center;">
+                    <h4>User : </h4>
+                    <h5 class="name_user"> aasdadad</h5>
+                </div> -->
+
+
+
+            </div>
+
+            <hr class="style_line" style="width: 80%;">
+
+            <ul>
+                <li class="link_painel_controle"><a href="../Dashboard/index.html"><i
+                            class='bx bx-category'></i></i><span class="nav-title">Dashboard</span></a></li>
+                <li class="link_area_gerencial"> <a href="../MeuPerfil/index.html"><i class='bx bxs-parking'></i><span
+                            class="nav-title">Meu Perfil</span></a></li>
+                <li><a href="../Eventos/index.html"><i class='bx bx-group'></i><span
+                            class="nav-title">Eventos</span></a></li>
+                <li class="link_motoristas"><a href="../Parcerias/index.html"><i class='bx bx-money'></i><span
+                            class="nav-title">Parcerias</span></a></li>
+                <!-- <li class="link_veiculos"><a href="pages/veiculos/veiculos.html"><i class='bx bx-money'></i><span
+                            class="nav-title">Veículos</span></a></li> -->
+
+            </ul>
+        </div>
+
+        <div class="cont-logout" onclick="logout()">
+            <i class='bx bx-log-out'></i>
+            <span>Voltar</span>
+        </div>
+
+        <!-- <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                             -->
+
+        <!-- <ul>
+        <li><i class='bx bx-dollar'></i><span class="nav-title">Precificações <i class='bx bx-error-alt'></i></span></li>
+        <li><i class='bx bxs-user-detail'></i><span class="nav-title">Usuarios <i class='bx bx-error-alt'></i></span></li>
+        <li><i class='bx bx-cog'></i><span class="nav-title">Configurações <i class='bx bx-error-alt'></i></span></li>
+    </ul> -->
+    </div>
+
+    <main>
+
+        <div class="conteudo">
+
+            <!-- <div class="linha-1">
+                <i class='bx bx-home'></i>
+
+                <div class="linha-1-sub">
+                    <h5>Meu Perfil</h5>
+                    <p>Gerencie suas Informações</b></p>
+                </div>
+            </div> -->
+
+            <div class="usuario">
+
+
+                <div class="cont_banner_img">
+
+                    <img src="https://t4.ftcdn.net/jpg/04/95/28/65/360_F_495286577_rpsT2Shmr6g81hOhGXALhxWOfx1vOQBa.jpg"
+                        alt="">
+
+                </div>
+
+
+                <div class="cont_icon_img">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+
+                    <h3>Nome do Produtor</h3>
+                </div>
+
+
+                <div class="inf_details">
+
+                    <div class="inps">
+
+                        <div>
+                            <p>Nome Fantasia:</p>
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div>
+                            <p>Email:</p>
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div>
+                            <p>Telefone:</p>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="line_final">
+                <hr class="line_final2">
+
+                <div class="social">
+
+                    <h5>REDES SOCIAIS</h5>
+
+                    <div class="card_sociais">
+
+                        <div class="sociais">
+                            <div>
+
+                                <i class='bx bxl-instagram-alt'></i>
+                                <p>Instagram</p>
+                            </div>
+
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div class="sociais">
+                            <div>
+
+                                <i class='bx bxl-twitter'></i>
+                                <p>Twitter</p>
+                            </div>
+
+                            <input type="text" name="" id="">
+                        </div>
+
+                        <div class="sociais">
+                            <div>
+
+                                <i class='bx bxl-facebook-circle'></i>
+                                <p>Facebook</p>
+                            </div>
+
+                            <input type="text" name="" id="">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <hr style="margin-top: 45px;" class="line_final">
+                <hr class="line_final2">
+
+                <div class="servicos">
+
+                    <div class="cont_servicos">
+                        <h5>TIPO SERVIÇOS</h5>
+
+                        <hr class="line_final3">
+
+
+                        <div>
+                            <input placeholder="Insira os Tipos de Serviços. . . ." type="text">
+                            <button>Adicionar</button>
+                        </div>
+
+                        <textarea style="resize: none; margin-top: 20px;" name="" id="" cols="40" rows="5"></textarea>
+
+                    </div>
+
+                    <div class="cont_servicos">
+                        <h5>SERVIÇOS FORNECIDOS</h5>
+
+                        <hr class="line_final3">
+                        <div>
+                            <input placeholder="Insira o seu Serviços Fornecidos" type="text">
+                            <button>Adicionar</button>
+                        </div>
+
+                        <textarea style="resize: none; margin-top: 20px;" name="" id="" cols="40" rows="5"></textarea>
+
+                    </div>
+                </div>
+
+                <div>
+                    <h5 style="margin-top: 20px;">GALERIA DE FOTOS</h5>
+
+                    <div class="slider">
+                        <div class="slide-card">
+                            <img src="https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9"
+                                alt="Card 1">
+                            <h3>Card 1</h3>
+                            <p>Some text for card 1.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="cont_btn_adicionar_imagem">
+
+                        <button class="btn_adicionar_imagem">Adicionar Imagem</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/slide.js"></script>
+
+</body>
+
+</html>

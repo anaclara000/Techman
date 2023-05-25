@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <title>Buscar Produtores</title>
+</head>
+
+<body onload="carregar()">
+
+    <header>
+
+        <nav>
+
+            <div class="cont_nav">
+
+                <h1>PLANEJA+</h1>
+
+                <ul style="list-style: none;">
+                    <li>
+                        <a href="../Home/home.html">
+
+                            <i class='bx bx-home'></i>
+                            Página Inicial
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class='bx bxs-user-rectangle'></i>
+                            Produtores
+                        </a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-party'></i>
+                        Meus Eventos
+                    </li>
+                </ul>
+
+                <div class="cont_user">
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="cont_banners">
+
+            <img src="assets/banner0.jpg" alt="">
+
+            <div class="inp_busca">
+                <h3>ENCONTRE SEU PRODUTOR</h3>
+
+                <div class="cont_inp_busca">
+                    <i class='bx bx-search-alt-2 btn_filter' id="button_src"></i>
+                    <input placeholder="Nome ou Serviço do Produtor" type="text" class="busca">
+                </div>
+
+                <div class="instrucoes">
+                    <p>1 - Na página de busca, localize a barra de pesquisa.</p>
+                    <p>2 - Insira o nome ou o tipo do produtor que você está procurando.</p>
+                    <p>3 - Clique no ícone da lupa para iniciar a busca.</p>
+
+                    <p class="descricao_instrucoes">Com esses três passos simples, você poderá encontrar o produtor
+                        desejado. Lembre-se de ser específico em sua busca, inserindo o nome completo ou um tipo
+                        específico de produtor, para aumentar as chances de encontrar o que você está procurando. Boa
+                        sorte!</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="title_produtores_list" style="text-align: center; ">PRODUTORES</h2>
+
+        <hr class="line_1">
+        <div class="cont_cards">
+
+
+        </div>
+
+        <div class="modal_produtor">
+
+            <i class='bx bx-x btn_close' onclick="FecharProdutor()"></i>
+
+            <div class="inf_user">
+                <div id="preview-container">
+                    <form enctype="multipart/form-data" class="banner_productor">
+                        <label for="arquivo" class="input-label">
+                            <i class='bx bxs-message-square-edit' onclick="document.querySelector('#img').click()"></i>
+
+                            <!-- <span>Selecione um banner</span> -->
+
+                            <input type="file" id="img" name="img" multiple hidden>
+                        </label>
+
+                    </form>
+
+                </div>
+                <div class="btnsConfirmar">
+                    <i class='bx bx-check btnConfirmarImg model' onclick="enviarArquivos(event)"></i>
+                    <i class='bx bx-x btnConfirmarImgClose model'></i>
+                </div>
+
+            </div>
+
+
+            <div class="cont_icon_user">
+                <img class="icon_user" src="https://cdn-icons-png.flaticon.com/512/552/552721.png" />
+
+                <div class="contNomeProdutor">
+                    <span class="nome_produtor">Coca Cola</span>
+                    <div class="redes_sociais_icons">
+                        <i class='bx bxl-facebook-circle' style="color: #375197"></i>
+                        <img src="assets/insta.png" alt="">
+                        <i class='bx bxl-twitter' style="color: #4CA2E5"></i>
+                    </div>
+                </div>
+
+                <div class="cont_btn_fechar_parceria">
+                    <button class="">Fechar Parceria</button>
+
+                </div>
+            </div>
+
+
+
+            <div class="cont_geral_infos">
+
+                <h5>INFORMAÇÕES</h5>
+
+                <div class="informacoes">
+
+                    <div class="cont_informacoes">
+                        <p class="title">Endereço </p>
+                        <div class="cont_endereco">
+                            <span>Rua Julia Bueno, 329 - Centro</span>
+                            <span>Jaguariuna - SP</span>
+                            <span>CEP: 13910-007</span>
+                        </div>
+                    </div>
+
+
+                    <div class="cont_informacoes">
+                        <p class="title">Contato </p>
+                        <div class="cont_contatos">
+                            <span class="contato">(19) 99999-9999</span>
+                            <span>/</span>
+                            <span class="email">eventos@eventos.com</span>
+                        </div>
+                    </div>
+                    <div class="cont_informacoes">
+                        <p class="title">Outras informações:</p>
+                        <div class="cont_outras_infos">
+
+                            <span>CPNJ <span class="cnpj">45.678.433-0001/3</span></span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="cont_servicos_tipo">
+
+                <h5>SERVIÇOS OFERECIDOS</h5>
+
+                <div class="cont_servicos">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="Eventos Realizados">
+
+                <div class="eventosFeitos">
+                    <div class="cont_titulo_eventos">
+                        <span class="tituloGaleria">GALERIA DE FOTOS</span>
+                        <!-- <i class='bx bxs-camera'></i> -->
+                    </div>
+                    <div class="fotosEventos">
+                        <div class="fotosContainer">
+                            <img src="assets/casamento.jpg" alt="" srcset="">
+                            <div>
+                                <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                    dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                    euismod.
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="fotosContainer">
+                            <div id="preview-container-galeria">
+                                <form enctype="multipart/form-data" class="banner_productor">
+                                    <label for="arquivo" class="input-label">
+                                        <i class='bx bxs-message-alt-edit'
+                                            onclick="document.querySelector('#img').click()"></i>
+
+                                        <input type="file" id="img" name="img" multiple hidden>
+                                    </label>
+
+                                </form>
+
+                            </div>
+                            <div>
+                                <span style="font-weight: bold ; font-size: 22px">Aniversario</span>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                    dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                    euismod.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="fotosContainer">
+                            <div id="preview-container-galeria">
+                                <form enctype="multipart/form-data" class="banner_productor">
+                                    <label for="arquivo" class="input-label">
+                                        <i class='bx bxs-message-alt-edit'
+                                            onclick="document.querySelector('#img').click()"></i>
+
+                                        <input type="file" id="img" name="img" multiple hidden>
+                                    </label>
+
+                                </form>
+
+                            </div>
+                            <div>
+                                <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                    dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                    euismod.
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="fotosContainer">
+                            <div id="preview-container-galeria">
+                                <form enctype="multipart/form-data" class="banner_productor">
+                                    <label for="arquivo" class="input-label">
+                                        <i class='bx bxs-message-alt-edit'
+                                            onclick="document.querySelector('#img').click()"></i>
+
+                                        <input type="file" id="img" name="img" multiple hidden>
+                                    </label>
+
+                                </form>
+
+                            </div>
+                            <div>
+                                <span style="font-weight: bold ; font-size: 22px">Casamento</span>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet diam
+                                    dapibus, varius nisi id, gravida arcu. Maecenas id nisi eu nibh consectetur
+                                    euismod.
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal_usuario modal">
+
+
+            <i class='bx bx-x btn_close' onclick="FecharUsuario()"></i>
+
+            <div class="user_modal">
+                <img class="icon_user_modal" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+
+                <h5>Nome User</h5>
+
+            </div>
+
+            <div class="sessoes">
+                <p>Sobre</p>
+                <p>Eventos</p>
+                <p>Parcerias</p>
+            </div>
+
+            <div class="section_sobre">
+
+
+                <div class="inps">
+                    <p class="title ">Email: </p>
+
+                    <input type="email" class="model">
+                    <p>adsadsada@gmail.com</p>
+                </div>
+
+                <div class="inps">
+
+                    <p class="title">Contato: </p>
+
+                    <input type="tel" class="model">
+
+                    <p>19 999291-3212</p>
+                </div>
+
+                <div class="inps">
+
+                    <p class="title">CNPJ: </p>
+
+                    <input type="tel" class="model">
+                    <p>12313131S</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!-- CLONES -->
+
+    <div class="cards" onclick="ModalProdutor(this)" style="display: none;">
+        <img src="assets/icons/coca_cola_icon.png" alt="">
+
+        <div class="details">
+
+            <h3 class="title_produtor">Nome</h3>
+
+            <p class="id_produtor model"></p>
+
+            <span>Tipo: <span class="tipo_produtor">Teste</span></span>
+        </div>
+
+        <!-- <i class='bx bx-right-arrow-alt' ></i> -->
+
+    </div>
+
+    <p class="servicos model">
+        sss
+    </p>
+
+
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+</html>

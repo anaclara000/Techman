@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Eventos - Planeja+</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../universal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- <nav>
+
+            <div class="cont_nav">
+
+
+                <h1>PLANEJA+</h1>
+
+                <ul style="list-style: none;">
+                    <li>
+                        <i class='bx bx-home'></i>
+                        Página Inicial
+                    </li>
+
+                    <li>
+                        <i class='bx bxs-user-rectangle'></i>
+                        Produtores
+                    </li>
+                    <li>
+                        <i class='bx bxs-party'></i>
+                        Meus Eventos
+                    </li>
+                </ul>
+
+                <div class="cont_user">
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+
+            </div>
+
+
+            <div class="cont_banner_inf">
+
+            </div>
+
+        </nav> -->
+
+        <div class="menu modal-menu">
+            <!-- <p><i onclick="teste()" class='bx bx-menu'></i></p> -->
+
+            <div>
+                <!-- <h1>PLANEJA+</h1>
+
+                <div class="cont_inf_user">
+
+
+                    <div>
+                        <p>Área do Produtor</p>
+                    </div> -->
+
+                    <!-- <i class='bx bxs-user-circle'></i>
+    
+                    <div style="display:  flex; justify-content: center; align-items: center;">
+                        <h4>User : </h4>
+                        <h5 class="name_user"> aasdadad</h5>
+                    </div> -->
+
+
+
+                <!-- </div> -->
+
+                <!-- <hr class="style_line" style="width: 80%;"> -->
+
+                <ul>
+                    <li class="link_painel_controle"><a href="../../Dashboard/index.html"><i class='bx bx-home'></i><span class="nav-title"></span></a></li>
+                    
+                    <li class="link_painel_controle"><a href="../../Dashboard/index.html"><i
+                                class='bx bx-category'></i></i><span class="nav-title"></span></a></li>
+                    <li class="link_area_gerencial"> <a href="../../MeuPerfil/index.html"><i class='bx bxs-parking'></i><span
+                                class="nav-title"></span></a></li>
+                    <li><a href="../Eventos/index.html"><i class='bx bx-group'></i><span class="nav-title"></span></a></li>
+                    <li class="link_motoristas"><a href="../../Parcerias/index.html"><i class='bx bx-money'></i><span
+                                class="nav-title"></span></a></li>
+    
+                    <li class="link_motoristas"><a href="../../Parcerias/index.html"><i class='bx bx-building-house'></i><span
+                                class="nav-title"></span></a></li>
+    
+                    <li class="link_motoristas"><a href="../../Parcerias/index.html"><i class='bx bx-money'></i><span
+                                class="nav-title"></span></a></li>
+    
+                    <li class="link_motoristas"><a href="" onclick="logout()"><i class='bx bx-log-out'></i><span
+                                class="nav-title"></span></a></li>
+                    <!-- <li class="link_veiculos"><a href="pages/veiculos/veiculos.html"><i class='bx bx-money'></i><span
+                                class="nav-title">Veículos</span></a></li> -->
+    
+                </ul>
+            </div>
+
+            <!-- <div class="cont-logout" onclick="logout()">
+                <i class='bx bx-log-out'></i>
+                <span>Sair</span>
+            </div> -->
+
+            <!-- <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                             -->
+
+            <!-- <ul>
+            <li><i class='bx bx-dollar'></i><span class="nav-title">Precificações <i class='bx bx-error-alt'></i></span></li>
+            <li><i class='bx bxs-user-detail'></i><span class="nav-title">Usuarios <i class='bx bx-error-alt'></i></span></li>
+            <li><i class='bx bx-cog'></i><span class="nav-title">Configurações <i class='bx bx-error-alt'></i></span></li>
+        </ul> -->
+        </div>
+
+
+    </header>
+
+
+    <main>
+
+        <!-- <h1 style="margin-top: 2%;">CRIAÇÃO DE EVENTOS</h1> -->
+
+
+        <div class="conteudo">
+
+            <div class="linha-1">
+                <i class='bx bx-home'></i>
+
+                <div class="linha-1-sub">
+                    <h5>Criação de Eventos</h5>
+                    <p>Insira as Informações no Formulário Abaixo!</b></p>
+                </div>
+            </div>
+
+            <div class="etapas">
+
+
+                <div class="etapa e01">
+
+                    <h3>INFORMAÇÕES DO EVENTO</h3>
+
+                    <div class="inps">
+
+                        <p>Insira o Banner do Evento:</p>
+
+
+                        <button>Adicionar</button>
+                    </div>
+
+                    <div class="inps">
+
+                        <p>Nome do Evento:</p>
+
+                        <input class="nomeEvento" type="text">
+                        <p class="erro_nome_evento model" style="color: red; margin-left: 20px;"> [Erro Nome do Evento]
+                        </p>
+                    </div>
+
+                    <div class="inps">
+
+                        <p>Descrição do Evento: </p>
+
+                        <div>
+
+                            <textarea class="descricaoEvento" name="" id="" cols="55" rows="5"
+                                style="resize: none; padding: 5px;"></textarea>
+                            <p class="erro_descricao_evento model" style="color: red; margin-left: 20px;"> [Erro Nome do
+                                Evento]</p>
+                        </div>
+
+                    </div>
+
+                    <div class="inps">
+                        <p>Endereço do Evento:</p>
+                        <input class="enderecoEvento" type="text">
+                        <p class="erro_endereco_evento model" style="color: red; margin-left: 20px;"> [Erro Endereço do
+                            Evento]</p>
+
+                    </div>
+
+                    <div class="inps">
+
+                        <div class="inps">
+                            <p>Data e Hora do Inicio:</p>
+                            <div>
+
+                                <input class="dateTime_inicio" type="datetime-local">
+                                <p class="erro_dataHoraInicio_evento model" style="color: red; margin-left: 20px;">
+                                    [Erro Data/Hora do Evento]</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="inps">
+                            <p>Data e Hora do Fim:</p>
+
+                            <div>
+                                <input class="dateTime_fim" type="datetime-local">
+                                <p class="erro_dataHoraFim_evento model" style="color: red; margin-left: 20px;">
+                                    [Erro Data/Hora do Evento]</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="etapa">
+
+                    <h3>FORNECEDOR</h3>
+
+                    <div class="inps">
+
+                        <p>Nome:</p>
+                        <input class="nomeFornecedor" type="text">
+                        <p class="erro_nome_fornecedor model" style="color: red; margin-left: 20px;"> [Erro Nome do
+                            Fornecedor]</p>
+
+                    </div>
+
+                    <div class="inps">
+                        <p>Descrição do Fornecedor: </p>
+                        <input class="descricaoFornecedor" type="text">
+                        <p class="erro_dataHoraInicio_fornecedor model" style="color: red; margin-left: 20px;"> [Erro
+                            Descricao do Fornecedor]</p>
+
+                    </div>
+
+                    <div class="inps">
+                        <p>Tipo do Fornecedor:</p>
+                        <input class="tipoFornecedor" type="text" name="" id="">
+                        <p class="erro_tipo_fornecedor model" style="color: red; margin-left: 20px;"> [Erro Tipo do
+                            Fornecedor]</p>
+
+                    </div>
+
+                    <div class="inps">
+
+                        <p>Telefone:</p>
+                        <input class="telefoneFornecedor" type="number">
+                        <p class="erro_telefone_fornecedor model" style="color: red; margin-left: 20px;"> [Erro Tipo do
+                            Fornecedor]</p>
+                    </div>
+
+                    <div class="inps">
+
+                        <p>Valor:</p>
+                        <input class="valorFornecedor" type="number">
+                        <p class="erro_valor_fornecedor model" style="color: red; margin-left: 20px;"> [Erro Tipo do
+                            Fornecedor]</p>
+
+                    </div>
+
+                </div>
+
+                <!-- <div class="etapa">
+
+                <h3>LOCAÇÃO</h3>
+
+                <div class="inps">
+
+                    <p>Tipo de Locação:</p>
+                    <input class="tipoLocacao" type="text" name="" id="">
+                </div>
+
+                <div class="inps">
+
+                    <p>Descricao da Locação:</p>
+                    <input class="descriLocacao" type="text" name="" id="">
+                </div>
+
+                <!-- <div class="inps">
+
+                <p>Endereço da Locação:</p>
+                <input type="text" name="" id="">
+            </div> -->
+
+                <!-- </div> -->
+
+
+                <div class="cont_btns_preview_criar">
+
+                    <button onclick="Conferir()">Conferir</button>
+                </div>
+            </div>
+
+            <div class="modal_Eventos" style="display: none;">
+
+                <div class="cont_img_banner">
+                    <img src="assets/aleksandr-popov-vCbKwN2IXT4-unsplash.jpg" alt="">
+                </div>
+
+                <div class="sections_eventos">
+
+                    <div onclick="SectionInformacao()">
+                        <i class='bx bx-info-circle'></i>
+                        <p>Informações</p>
+                    </div>
+
+                    <div onclick="SectionLocacao()">
+                        <i class='bx bx-home'></i>
+                        <p>Locações</p>
+                    </div>
+
+                    <div onclick="SectionConvidado()">
+                        <i class='bx bxs-user'></i>
+                        <p>Lista de Convidados</p>
+                    </div>
+
+                    <div>
+                        <i class='bx bxs-photo-album'></i>
+                        <p>Album de Fotos</p>
+                    </div>
+
+
+
+                </div>
+
+                <hr class="line_sections">
+
+                <div class="informacao">
+
+                    <h3 class="nome_evento">Nome do Evento</h3>
+
+                    <div class="inps_modal">
+
+                        <img src="assets/icons/local_icon.png" alt="">
+                        <p class="endereco_evento">Rua das Ruas Endereço Rua</p>
+                        <img src="assets/icons/local_icon.png" alt="">
+
+                    </div>
+
+                    <div class="inps_modal">
+                        <!-- <p class="title">Descrição: 
+                    </p> -->
+                        <p class="descricao_evento"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
+                            ratione explicabo
+                            hic
+                            porro unde, cum nam eveniet nostrum autem reiciendis culpa doloribus, mollitia recusandae
+                            doloremque
+                            ad impedit atque officiis natus?</p>
+                    </div>
+
+                    <div class="inps_modal date_hour">
+
+                        <div>
+                            <img src="assets/icons/calendario_icon.png" alt="">
+                            <p>INICIO - Dia
+                            <p class="data_inicio"> 08/08/8888 [13:00]</p>
+                            </p>
+                        </div>
+
+                        <div>
+                            <img src="assets/icons/calendario_icon.png" alt="">
+                            <p>FIM - Dia
+                            <p class="data_fim"> 08/08/8888 [15:00]</p>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <hr class="linha_final_modal">
+
+                    <div class="inps_modal">
+
+                        <span>Evento Produzio por: <span class="nome_produtor">Nome do Produtor</span></span>
+                    </div>
+
+
+                </div>
+
+                <div class="locacao" style="display: none;">
+
+                    <h3>LOCAÇÕES</h3>
+
+
+                    <div class="inps_modal convidado">
+
+                        <div>
+
+                            <p>Tipo da Locação:</p>
+                            <input class="nomeLocacao" maxlength="30" type="text" name="" id="">
+                        </div>
+
+                        <div>
+
+                            <p>Descrição:</p>
+                            <input class="telaLocacao" maxlength="35" type="text" name="" id="">
+                        </div>
+
+                        <button onclick="AdicionarLocacao()" class="btn_Adicionar">Adicionar</button>
+
+                    </div>
+
+                    <hr class="linha_final_modal2">
+
+                    <div class="cont_locacao">
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="convidados" style="display: none;">
+
+                    <h3>LISTA DE CONVIDADOS</h3>
+
+                    <div class="inps_modal convidado">
+
+                        <div>
+
+                            <p>Nome:</p>
+                            <input class="nomeConvidado" type="text" name="" id="">
+                        </div>
+
+                        <div>
+
+                            <p>Telefone:</p>
+                            <input class="telConvidado" type="text" name="" id="">
+                        </div>
+
+                        <button onclick="AdicionarConvidados()" class="btn_Adicionar">Adicionar</button>
+
+                    </div>
+
+                    <div class="cont_convidados">
+
+                    </div>
+
+                </div>
+
+                <div class="cont_btn_criar_evento">
+                    <button class="btn_criar_evento" onclick="BtnCriarEvento()">Criar Evento</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CLONES -->
+        <div class="cont_card_locacao model">
+            <div class="card_locacao">
+
+                <h5 class="tipo_locacao">Tipo de Locacao</h5>
+
+                <hr>
+                <p class="descricao_locacao">descricao asdadadsalhdsk</p>
+
+                <button onclick="RemoverLocacao(this)">Remover</button>
+            </div>
+        </div>
+
+        <div class="cont_card_convidados model">
+
+            <h5 class="nome_convidado">Nome do Convidado</h5>
+            <p class="telefone_convidado">Nome do Convidado</p>
+
+            <button onclick="RemoverConvidado(this)">Remover</button>
+        </div>
+
+
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

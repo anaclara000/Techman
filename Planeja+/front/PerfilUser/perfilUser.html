@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estrutura.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <title>Chat de dúvidas</title>
+</head>
+<header>
+    <nav class="menu-lateral">
+
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+
+            <h2 class="txt-link title_menu">Planeja+</h2>
+        </div><!--btn-expandir-->
+
+        <ul>
+            <li class="item-menu">
+                <a href="../PainelControle/index.html">
+                    <p class="icon"><i class="bi bi-columns-gap"></i></p>
+                    <p class="txt-link">Promotores</p>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="../Parcerias/index.html">
+                    <p class="icon"><i class="bi bi-people-fill"></i>
+                    </p>
+                    <p class="txt-link">Parcerias</p>
+                </a>
+
+            </li>
+            <li class="item-menu">
+                <a href="../Eventos/index.html">
+                    <p class="icon"><i class="bi bi-calendar-event"></i></p>
+                    <p class="txt-link">Eventos</p>
+                </a>
+            </li>
+            <li class="item-menu ativo">
+                <a href="#">
+                    <p class="icon"><i class="bi bi-person"></i></p>
+                    <p class=" txt-link">Perfil</p>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <p class="icon"><i class="bi bi-person-circle"></i></p>
+                    <p class="txt-link">Conta</p>
+                </a>
+            </li>
+        </ul>
+
+    </nav><!--menu-lateral-->
+</header>
+
+<body>
+    <div class="container">
+        <div class="cont-fornecedor">
+            <!-- <div class="cont-infos">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
+                    alt="">
+                <span>Faça festa</span>
+            </div> -->
+            <div class="cont-mensagens">
+                <div class="cont-input-msg">
+                    <input type="text" placeholder="Procurar...">
+                    <i class='bx bx-search'></i>
+                </div>
+                <div class="cont-infos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
+                        alt="">
+                    <span>Faça festa</span>
+                </div>
+                <div class="cont-infos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
+                        alt="">
+                    <span>Faça festa</span>
+                </div>
+                <div class="cont-infos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
+                        alt="">
+                    <span>Faça festa</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="cont-msg">
+            <div id="messages">
+                <div id="div-destinatario">
+                    <span id="envia"></span>
+                    <span id="conteudo"></span>
+                </div>
+                <div id="div-remetente">
+                    <span id="recebe"></span>
+                    <span id="conteudoRemetente"></span>
+                </div>
+
+            </div>
+            <div class="cont-input">
+                <div class="input">
+                    <input type="text" id="input" placeholder="Digite sua mensagem..." />
+                    <i class='bx bx-send' onclick="sendMessage()"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        const ws = new WebSocket('ws://localhost:3000/chat');
+
+        ws.onopen = () => {
+            console.log('Conexão estabelecida.');
+        };
+
+        ws.onmessage = (event) => {
+            console.log('entrou');
+            const messagesDiv = document.getElementById('messages');
+            const mensagem = JSON.parse(event.data);
+            const remetenteId = mensagem.remetenteId;
+
+            ws.onmessage = (event) => {
+                console.log('entrou');
+                const mensagem = JSON.parse(event.data);
+                const remetenteId = mensagem.remetenteId;
+
+                if (remetenteId) {
+                    const containerDest = document.createElement('div');
+                    const envia = document.createElement('span');
+                    const conteudoEnvia = document.createElement('span');
+
+                    containerDest.classList.add('div-destinatario');
+                    envia.id = 'envia';
+                    conteudoEnvia.id = 'conteudoRemetente';
+
+                    envia.textContent = mensagem.destinatarioId;
+                    conteudoEnvia.textContent = mensagem.conteudo;
+
+                    // containerDest.appendChild(envia);
+                    containerDest.appendChild(conteudoEnvia);
+
+                    // Adicione à div 'destinatario'
+                    const destinatarioDiv = document.getElementById('div-destinatario');
+                    destinatarioDiv.appendChild(containerDest);
+                } else {
+                    const containerRemetente = document.createElement('div');
+                    const recebe = document.createElement('span');
+                    const conteudoRecebe = document.createElement('span');
+
+                    containerRemetente.classList.add('div-remetente');
+                    recebe.id = 'recebe';
+                    conteudoRecebe.id = 'conteudo';
+
+                    recebe.textContent = mensagem.remetenteId;
+                    conteudoRecebe.textContent = mensagem.conteudo;
+
+                    // containerRemetente.appendChild(recebe);
+                    containerRemetente.appendChild(conteudoRecebe);
+
+                    // Adicione à div 'remetente'
+                    const remetenteDiv = document.getElementById('div-remetente');
+                    remetenteDiv.appendChild(containerRemetente);
+                }
+            };
+
+        };
+
+        ws.onclose = () => {
+            console.log('Conexão encerrada.');
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('input');
+            const remetenteId = 1;
+            const destinatarioId = 1;
+            const conteudo = input.value;
+
+            const message = {
+                remetenteId,
+                destinatarioId,
+                conteudo,
+            };
+
+            console.log(message);
+            ws.send(JSON.stringify(message));
+            input.value = '';
+        }
+
+        // Adicionar evento de teclado para o campo de entrada
+        const input = document.getElementById('input');
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && input.value != '') {
+                sendMessage();
+            } else {
+                console.log('nada')
+            }
+        });
+
+    </script>
+</body>
+
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="js/script.js"></script>
+
+</html>
