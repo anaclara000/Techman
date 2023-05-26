@@ -53,7 +53,6 @@ wss.on('connection', (ws) => {
 
             wss.clients.forEach((client) => {
                 client.send(JSON.stringify(novaMensagem));
-                console.log(novaMensagem);
                 if (client !== ws && client.readyState === WebSocket.OPEN) {
                     client.send(JSON.stringify(novaMensagem));
                 }
@@ -63,6 +62,7 @@ wss.on('connection', (ws) => {
         }
     });
 });
+
 
 
 server.listen(3000, () => {

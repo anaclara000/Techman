@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../estrutura.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../PerfilUser/css/style.css">
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <title>Chat de dúvidas</title>
 </head>
@@ -93,13 +93,10 @@
 
         </div>
         <div class="cont-msg">
-
             <div id="messages">
                 <span class="conteudoRemetente"></span>
                 <span class="conteudo"></span>
             </div>
-
-
             <div class="cont-input">
                 <div class="input">
                     <input type="text" id="input" placeholder="Digite sua mensagem..." />
@@ -131,7 +128,7 @@
             const conteudoSpan = document.createElement('span');
             conteudoSpan.textContent = mensagem.conteudo;
 
-            if (remetenteId == 3) {
+            if (remetenteId == 1) {
                 conteudoSpan.classList.add('conteudoRemetente');
             } else {
                 conteudoSpan.classList.add('conteudo');
@@ -147,8 +144,8 @@
 
         function sendMessage() {
             const input = document.getElementById('input');
-            const remetenteId = 3;
-            const destinatarioId = 1;
+            const remetenteId = 1;
+            const destinatarioId = 3;
             const conteudo = input.value;
 
             const message = {
