@@ -128,24 +128,8 @@ MENSAGENS */
     flex-direction: column;
     overflow-y: scroll;
     display: flex;
+    padding: 1%;
 }
-
-/* #div-destinatario {
-    background-color: rgb(38, 167, 124);
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-#div-remetente {
-    background-color: antiquewhite;
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: end;
-} */
 
 .conteudo,
 .conteudoRemetente {
@@ -155,9 +139,17 @@ MENSAGENS */
 
 .conteudo {
     background-color: rgb(236, 230, 223);
+    width: auto;
+    padding: 1%;
+    margin-right: auto;
+    margin-top: 0.5%;
 }
 
 .conteudoRemetente {
     background-color: rgb(207, 183, 235);
     text-align: end;
+    padding: 1%;
+    margin-left: auto;
+    width: auto;
+    margin-top: 0.5%;
 }
