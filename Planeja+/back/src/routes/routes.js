@@ -70,4 +70,5 @@ router.delete('/servicos/id/:id_servicos', Servicos.remove)
 
 const Mensagens = require('../controller/messagens')
 router.get('/messagens', Mensagens.read)
+router.get('/messagens/id/:destinatarioId', Mensagens.readOne)
 module.exports = router;

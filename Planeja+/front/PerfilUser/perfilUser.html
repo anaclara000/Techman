@@ -60,7 +60,7 @@
     </nav><!--menu-lateral-->
 </header>
 
-<body>
+<body onLoad="carregar()">
     <div class="container">
         <div class="cont-fornecedor">
             <!-- <div class="cont-infos">
@@ -73,7 +73,13 @@
                     <input type="text" placeholder="Procurar...">
                     <i class='bx bx-search'></i>
                 </div>
-                <div class="cont-infos">
+                <div class="cont-infos" onClick="exibirMensagem(this)" style="display: none">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
+                        alt="">
+                    <span class="id-promotor" style="display: none"></span>
+                    <span class="nome-promotor"></span>
+                </div>
+                <!-- <div class="cont-infos">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
                         alt="">
                     <span>Faça festa</span>
@@ -82,21 +88,21 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
                         alt="">
                     <span>Faça festa</span>
-                </div>
-                <div class="cont-infos">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU"
-                        alt="">
-                    <span>Faça festa</span>
-                </div>
+                </div> -->
 
             </div>
 
         </div>
         <div class="cont-msg">
 
+            <div class="cont-nome-promotor">
+                <img src="https://s2.glbimg.com/Sdia9HsRP4V_FCb874if-ml_4is=/620x520/e.glbimg.com/og/ed/f/original/2020/08/11/31669212-8603391-a_king_eidar_duck_bathing_in_some_shallow_water-a-28_1596787696775.jpg"
+                    alt="">
+                <span class="nomePromotor"></span>
+            </div>
             <div id="messages">
-                <span class="conteudoRemetente">Oi</span>
-                <span class="conteudo">bão?</span>
+                <span class="conteudoRemetente" style="display: none"></span>
+                <span class="conteudo" style="display: none"></span>
             </div>
 
 
@@ -111,68 +117,8 @@
         </div>
 
     </div>
-    <script>
-        const ws = new WebSocket('ws://localhost:3000/chat');
 
-        ws.onopen = () => {
-            console.log('Conexão estabelecida.');
-        };
-        const receivedMessages = new Set();
-        ws.onmessage = (event) => {
-            const messagesDiv = document.getElementById('messages');
 
-            const mensagem = JSON.parse(event.data);
-            const remetenteId = mensagem.remetenteId;
-            if (receivedMessages.has(mensagem.id_mensagem)) {
-                return; // Ignorar a mensagem duplicada
-            }
-
-            receivedMessages.add(mensagem.id_mensagem);
-            const conteudoSpan = document.createElement('span');
-            conteudoSpan.textContent = mensagem.conteudo;
-
-            if (remetenteId == 3) {
-                conteudoSpan.classList.add('conteudoRemetente');
-            } else {
-                conteudoSpan.classList.add('conteudo');
-            }
-
-            messagesDiv.appendChild(conteudoSpan);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        };
-
-        ws.onclose = () => {
-            console.log('Conexão encerrada.');
-        };
-
-        function sendMessage() {
-            const input = document.getElementById('input');
-            const remetenteId = 3;
-            const destinatarioId = 1;
-            const conteudo = input.value;
-
-            const message = {
-                remetenteId,
-                destinatarioId,
-                conteudo,
-            };
-
-            console.log(message);
-            ws.send(JSON.stringify(message));
-            input.value = '';
-        }
-
-        // Adicionar evento de teclado para o campo de entrada
-        const input = document.getElementById('input');
-        input.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' && input.value != '') {
-                sendMessage();
-            } else {
-                console.log('nada')
-            }
-        });
-
-    </script>
 </body>
 
 

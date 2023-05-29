@@ -51,6 +51,8 @@ wss.on('connection', (ws) => {
                 },
             });
 
+            novaMensagem.data = new Date(); // Adicione a propriedade 'data' com a data atual
+
             wss.clients.forEach((client) => {
                 client.send(JSON.stringify(novaMensagem));
                 if (client !== ws && client.readyState === WebSocket.OPEN) {

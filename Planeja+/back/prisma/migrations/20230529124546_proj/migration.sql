@@ -17,13 +17,22 @@ CREATE TABLE `Usuario` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Message` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `content` VARCHAR(191) NOT NULL,
-    `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `userId` INTEGER NOT NULL,
+CREATE TABLE `Conversa` (
+    `id_conversa` INTEGER NOT NULL AUTO_INCREMENT,
 
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id_conversa`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Mensagem` (
+    `id_mensagem` INTEGER NOT NULL AUTO_INCREMENT,
+    `conteudo` VARCHAR(191) NOT NULL,
+    `remetenteId` INTEGER NOT NULL,
+    `destinatarioId` INTEGER NOT NULL,
+    `conversaId` INTEGER NOT NULL,
+    `data` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id_mensagem`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
@@ -109,8 +118,23 @@ CREATE TABLE `Fornecedor` (
     PRIMARY KEY (`id_fornecedor`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+-- CreateTable
+CREATE TABLE `_participantes` (
+    `A` INTEGER NOT NULL,
+    `B` INTEGER NOT NULL,
+
+    UNIQUE INDEX `_participantes_AB_unique`(`A`, `B`),
+    INDEX `_participantes_B_index`(`B`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 -- AddForeignKey
-ALTER TABLE `Message` ADD CONSTRAINT `Message_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `Usuario`(`id_usuario`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Mensagem` ADD CONSTRAINT `Mensagem_remetenteId_fkey` FOREIGN KEY (`remetenteId`) REFERENCES `Usuario`(`id_usuario`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Mensagem` ADD CONSTRAINT `Mensagem_destinatarioId_fkey` FOREIGN KEY (`destinatarioId`) REFERENCES `Usuario`(`id_usuario`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Mensagem` ADD CONSTRAINT `Mensagem_conversaId_fkey` FOREIGN KEY (`conversaId`) REFERENCES `Conversa`(`id_conversa`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Parcerias` ADD CONSTRAINT `Parcerias_idCliente_fkey` FOREIGN KEY (`idCliente`) REFERENCES `Usuario`(`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -132,3 +156,9 @@ ALTER TABLE `Locacoes` ADD CONSTRAINT `Locacoes_idEvento_fkey` FOREIGN KEY (`idE
 
 -- AddForeignKey
 ALTER TABLE `Fornecedor` ADD CONSTRAINT `Fornecedor_idEvento_fkey` FOREIGN KEY (`idEvento`) REFERENCES `Eventos`(`id_eventos`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `_participantes` ADD CONSTRAINT `_participantes_A_fkey` FOREIGN KEY (`A`) REFERENCES `Conversa`(`id_conversa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `_participantes` ADD CONSTRAINT `_participantes_B_fkey` FOREIGN KEY (`B`) REFERENCES `Usuario`(`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;

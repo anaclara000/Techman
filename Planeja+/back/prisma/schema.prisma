@@ -45,6 +45,7 @@ model Mensagem {
   destinatarioId Int
   conversa       Conversa @relation(fields: [conversaId], references: [id_conversa])
   conversaId     Int
+  data           DateTime @default(now()) // Adicione esta linha para armazenar a data da mensagem
 }
 
 model Parcerias {

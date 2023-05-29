@@ -94,8 +94,8 @@
         </div>
         <div class="cont-msg">
             <div id="messages">
-                <span class="conteudoRemetente"></span>
-                <span class="conteudo"></span>
+                <span class="conteudoRemetente model"></span>
+                <span class="conteudo model"></span>
             </div>
             <div class="cont-input">
                 <div class="input">
@@ -114,17 +114,20 @@
         ws.onopen = () => {
             console.log('Conexão estabelecida.');
         };
+
         const receivedMessages = new Set();
+
         ws.onmessage = (event) => {
             const messagesDiv = document.getElementById('messages');
-
             const mensagem = JSON.parse(event.data);
             const remetenteId = mensagem.remetenteId;
+
             if (receivedMessages.has(mensagem.id_mensagem)) {
                 return; // Ignorar a mensagem duplicada
             }
 
             receivedMessages.add(mensagem.id_mensagem);
+
             const conteudoSpan = document.createElement('span');
             conteudoSpan.textContent = mensagem.conteudo;
 
@@ -145,13 +148,15 @@
         function sendMessage() {
             const input = document.getElementById('input');
             const remetenteId = 1;
-            const destinatarioId = 3;
+            const destinatarioId = 2;
             const conteudo = input.value;
+            const data = new Date().toISOString(); // Obtém a data atual em formato ISO string
 
             const message = {
                 remetenteId,
                 destinatarioId,
                 conteudo,
+                data, // Adiciona a propriedade 'data' com a data atual
             };
 
             console.log(message);
@@ -165,10 +170,9 @@
             if (event.key === 'Enter' && input.value != '') {
                 sendMessage();
             } else {
-                console.log('nada')
+                console.log('nada');
             }
         });
-
     </script>
 </body>
 
