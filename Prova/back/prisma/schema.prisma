@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Clientes {
+  id   Int    @id @default(autoincrement())
+  nome String
+}
+
+model Automoveis {
+  id     Int    @id @default(autoincrement())
+  modelo String
+  preco  String
+}
+
+model Concessionarias {
+  id             Int    @id @default(autoincrement())
+  concessionaria String
+}
+
+model Alocacao {
+  id             Int @id @default(autoincrement())
+  area           Int
+  automovel      Int
+  concessionaria Int
+  quantidade     Int
+}
+
+model Venda {
+  id             Int    @id @default(autoincrement())
+  concessionaria String
+  cliente        String
+  automovel      Int
+}
