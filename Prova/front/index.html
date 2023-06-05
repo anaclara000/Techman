@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prova</title>
+</head>
+
+<body>
+    <div class="cont-areas">
+
+
+
+
+
+
+
+
+        <div class="area7 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">7</span>
+        </div>
+        <div class="area8 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">8</span>
+        </div>
+        <div class="area9 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">9</span>
+        </div>
+        <div class="area10 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">10</span>
+        </div>
+        <div class="area5 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">5</span>
+        </div>
+        <div class="area3 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">3</span>
+        </div>
+        <div class="area1 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">1</span>
+        </div>
+        <div class="area4 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">4</span>
+        </div>
+        <div class="area6 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">6</span>
+        </div>
+        <div class="area11 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">11</span>
+        </div>
+        <div class="area2 areas" onclick="listarLocacoes(this)">
+            <span class="valorArea">2</span>
+        </div>
+
+    </div>
+    <div class="cont-modelo model">
+        <div class="itens">
+            <span class="a">Area 10</span>
+            <span class="fechar" onclick="fechar()">x</span>
+        </div>
+
+        <div class="infos-cont-modelo">
+            <span class="area">Area 10</span>
+            <span class="automovel"></span>
+            <span class="preco"></span>
+            <button onclick="abrirModalVendas(this)">Vender</button>
+        </div>
+    </div>
+
+    <div class="cont-vendas model">
+        <div class="infos-vender">
+            <span class="modelo-automovel">aa</span>
+            <select class="clientes" name="" id="select_cliente">
+
+            </select>
+            <select class="conce" name="" id="select_conce">
+
+            </select>
+            <button>Confirmar</button>
+        </div>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

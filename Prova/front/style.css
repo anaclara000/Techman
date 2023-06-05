@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.model {
+    visibility: hidden;
+    display: none;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+
+.area1 {
+    top: 55%;
+    width: 11vw;
+    height: 23vh;
+    left: 27.3%
+}
+
+.area4 {
+    width: 9vw;
+    height: 9vh;
+    top: 52%;
+    left: 37%;
+}
+
+.area6 {
+    width: 7vw;
+    height: 5vh;
+    position: absolute;
+    left: 78%;
+    top: 5%;
+}
+
+.areas {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+}
+
+.area10 {
+    position: absolute;
+    top: 5%;
+    margin-left: 60%;
+    height: 90vh;
+    width: 25vw;
+
+}
+
+.area2 {
+    top: 62%;
+    width: 4vw;
+    height: 11vh;
+    left: 43%;
+}
+
+.area7 {
+    top: 48.1%;
+    width: 7vw;
+    height: 7vh;
+    left: 46%;
+}
+
+
+.area5 {
+    width: 20vw;
+    position: absolute;
+    top: 55%;
+    left: 46%;
+    height: 40vh;
+}
+
+.area3 {
+    width: 18vw;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    height: 35vh;
+}
+
+.area11 {
+    width: 4vw;
+    height: 11vh;
+    left: 48%;
+    top: 8%;
+}
+
+.area9 {
+    width: 8vw;
+    height: 11vh;
+    left: 50%;
+    top: 20%;
+}
+
+.area8 {
+    width: 8vw;
+    height: 8vh;
+    left: 42%;
+    top: 21.5%;
+}
+
+.cont-modelo {
+    position: relative;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.infos-cont-modelo {
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    width: 20%;
+
+}
+
+.infos-cont-modelo>span {
+    padding-left: 10px;
+}
+
+.infos-cont-modelo>button {
+    margin-left: 10px;
+}
+
+.itens {
+    background-color: #fff;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+.cont-vendas {
+    background-color: #ffffff;
+    position: absolute;
+    top: 2%;
+    left: 10%;
+    width: 20%;
+    padding: 1%;
+}
+
+.infos-vender {
+    display: flex;
+    flex-direction: column;
+}

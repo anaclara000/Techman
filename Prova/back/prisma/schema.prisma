@@ -16,9 +16,10 @@ model Clientes {
 }
 
 model Automoveis {
-  id     Int    @id @default(autoincrement())
+  id     Int     @id @default(autoincrement())
   modelo String
   preco  String
+  Venda  Venda[]
 }
 
 model Concessionarias {
@@ -35,8 +36,9 @@ model Alocacao {
 }
 
 model Venda {
-  id             Int    @id @default(autoincrement())
+  id             Int        @id @default(autoincrement())
   concessionaria String
   cliente        String
   automovel      Int
+  id_automovel   Automoveis @relation(fields: [automovel], references: [id])
 }
